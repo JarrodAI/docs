@@ -1,0 +1,80 @@
+---
+title: "POST /api/vote"
+description: "Submit a TACO or HOLDS vote for a prediction."
+---
+
+## Request
+
+```bash
+POST https://trumpcheck.one/api/vote
+Content-Type: application/json
+```
+
+### Body
+
+```json
+{
+  "question_id": "uuid",
+  "vote": "taco",
+  "wallet": "SolanaWalletAddressHere"
+}
+```
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `question_id` | string | Yes | The question UUID from `/api/questions` |
+| `vote` | string | Yes | Either `"taco"` or `"holds"` |
+| `wallet` | string | Yes | Voter's Solana wallet address |
+
+---
+
+## Response
+
+### Success (200)
+
+```json
+{
+  "success": true,
+  "vote_id": "uuid",
+  "question_id": "uuid",
+  "vote": "taco"
+}
+```
+
+### Already Voted (400)
+
+```json
+{
+  "error": "Already voted on this question"
+}
+```
+
+### Voting Closed (400)
+
+```json
+{
+  "error": "Voting closed — verdict already posted"
+}
+```
+
+---
+
+## Notes
+
+- One vote per wallet address per question
+- Votes cannot be changed after submission
+- Voting closes when the verdict is posted at 8 PM EST
+
+---
+
+## Example
+
+```bash
+curl -X POST https://trumpcheck.one/api/vote \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question_id": "abc123",
+    "vote": "taco",
+    "wallet": "YourPhantomWalletAddress"
+  }'
+```

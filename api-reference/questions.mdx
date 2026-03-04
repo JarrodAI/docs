@@ -1,0 +1,56 @@
+---
+title: "GET /api/questions"
+description: "Get today's prediction questions."
+---
+
+## Request
+
+```bash
+GET https://trumpcheck.one/api/questions
+```
+
+### Optional Query Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `date` | string | Date in `YYYY-MM-DD` format. Defaults to today. |
+
+---
+
+## Response
+
+Returns an array of question objects for the specified date.
+
+```json
+[
+  {
+    "id": "uuid",
+    "date": "2026-03-04",
+    "question": "Will Trump reverse the latest tariff threat on Canada?",
+    "category": "Trade",
+    "taco_votes": 312,
+    "holds_votes": 89,
+    "verdict": null,
+    "created_at": "2026-03-04T00:30:00.000Z"
+  }
+]
+```
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Unique question UUID |
+| `date` | string | The prediction date |
+| `question` | string | The prediction text |
+| `category` | string | Policy category |
+| `taco_votes` | number | Number of TACO votes |
+| `holds_votes` | number | Number of HOLDS votes |
+| `verdict` | string \| null | `"taco"`, `"holds"`, or `null` if pending |
+| `created_at` | string | When the question was posted |
+
+---
+
+## Example
+
+```bash
+curl "https://trumpcheck.one/api/questions?date=2026-03-04"
+```

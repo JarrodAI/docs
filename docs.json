@@ -1,68 +1,69 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "TrumpCheck.one",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#D4A017",
+    "light": "#F0BE40",
+    "dark": "#0A1628"
   },
   "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "TrumpCheck.one",
+        "href": "https://trumpcheck.one"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Vote & Win USDC →",
+      "href": "https://trumpcheck.one/#predictions"
+    }
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Get Started",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Overview",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "introduction",
+              "prediction-market",
+              "taco-score"
             ]
           },
           {
-            "group": "Customization",
+            "group": "$TRUMPCHECK Token",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "token/overview",
+              "token/how-to-buy"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Mission",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "sat7-mission"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "API Reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "API Documentation",
             "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/overview",
+              "api-reference/score",
+              "api-reference/questions",
+              "api-reference/vote",
+              "api-reference/winners"
             ]
           }
         ]
@@ -71,52 +72,27 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Vote & Win USDC",
+          "href": "https://trumpcheck.one/#predictions",
+          "icon": "trophy"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Buy $TRUMPCHECK",
+          "href": "https://trumpcheck.one/#token",
+          "icon": "coins"
+        },
+        {
+          "anchor": "SAT-7 Charity",
+          "href": "https://trumpcheck.one/#mission",
+          "icon": "heart"
         }
       ]
     }
   },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://twitter.com/trumpcheckone",
+      "github": "https://github.com/JarrodAI/trumpchick"
     }
   }
 }

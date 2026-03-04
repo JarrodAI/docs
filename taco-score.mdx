@@ -1,0 +1,81 @@
+---
+title: "T.A.C.O. Score"
+description: "Understanding the Trump Always Chickens Out index — what it measures and how it's calculated."
+---
+
+## What is the T.A.C.O. Score?
+
+The **T.A.C.O. Score** (Trump Always Chickens Out) is a 0–100 index that measures the frequency of presidential policy reversals relative to total policy actions.
+
+<Info>
+  **Higher score = more reversals.** A score of 91 means 91% of tracked policy threats were walked back.
+</Info>
+
+The term was coined by Wall Street traders who noticed a pattern: bold threats, followed by negotiated retreats. They built trading strategies around it. We built the meter.
+
+---
+
+## Score Components
+
+| Component | Description |
+|-----------|-------------|
+| **TACO Count** | Number of documented policy reversals in the tracked period |
+| **Holds Count** | Number of policies actually followed through |
+| **Events (90d)** | Total tracked policy events in the last 90 days |
+| **Reversal Rate** | `taco_count / (taco_count + holds_count)` × 100 |
+| **TACO Score** | Weighted combination of reversal rate + recency |
+
+---
+
+## Score Scale
+
+<CardGroup cols={3}>
+  <Card title="0–30: High Integrity" icon="check">
+    Rare. Policies are consistently followed through. Very few reversals.
+  </Card>
+  <Card title="31–70: Moderate" icon="minus">
+    Mixed record. Some reversals, some execution. Watch closely.
+  </Card>
+  <Card title="71–100: Full TACO" icon="circle-exclamation">
+    High reversal rate. Wall Street's TACO trade is active.
+  </Card>
+</CardGroup>
+
+---
+
+## What Counts as a Reversal?
+
+A policy action is marked as **TACO** when:
+
+1. An official policy position, threat, or executive order is announced
+2. Within 90 days, the position is publicly reversed, softened, delayed indefinitely, or abandoned
+3. The reversal is documented by at least two major news sources
+
+**Examples of TAC reversals tracked:**
+- Tariff threats announced then withdrawn during negotiations
+- Executive orders signed but immediately enjoined and not appealed
+- Official statements retracted within 48 hours
+- Policy positions reversed after market reactions
+
+---
+
+## Data Sources
+
+| Source | Use |
+|--------|-----|
+| White House official press releases | Primary policy announcements |
+| Federal Register | Executive orders, rule changes |
+| Reuters, AP, Bloomberg | Reversal documentation |
+| Congressional tracking | Legislative follow-through |
+| Our editorial team | Event classification |
+
+---
+
+## Score Updates
+
+The T.A.C.O. Score is updated:
+- **Hourly** — when new events are logged
+- **Daily** — full recalculation at midnight EST
+- **On demand** — via our API (`/api/score`)
+
+The score displayed on the live gauge reflects the most recent stored calculation. A live indicator shows when it was last updated.

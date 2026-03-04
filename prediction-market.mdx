@@ -1,0 +1,88 @@
+---
+title: "Prediction Market"
+description: "How to vote, win USDC, and participate in daily Trump predictions."
+---
+
+## Daily Predictions
+
+Every day at **midnight EST**, five new predictions are posted about upcoming Trump policy decisions. Each prediction is binary:
+
+- **🌮 TACO** — You believe Trump will reverse course, cave, or walk back the policy
+- **💪 HOLDS** — You believe Trump will follow through and execute the policy
+
+<Note>
+  Predictions reset daily. You must vote **before 8 PM EST** to be eligible for that day's prizes.
+</Note>
+
+---
+
+## How to Vote
+
+<Steps>
+  <Step title="Get a Phantom Wallet">
+    Download [Phantom](https://phantom.app) — the leading Solana wallet. It's free.
+  </Step>
+  <Step title="Connect at TrumpCheck.one">
+    Click **Connect Wallet** at the top of the page. Approve the connection in Phantom — no SOL needed to vote.
+  </Step>
+  <Step title="Cast Your Vote">
+    For each prediction, tap **TACO** or **HOLDS**. Your vote is recorded instantly.
+  </Step>
+  <Step title="Wait for 8 PM EST Verdict">
+    The verdict cron runs at 8 PM EST every day, evaluating each prediction based on real news sources.
+  </Step>
+</Steps>
+
+---
+
+## Winning Prizes
+
+The daily prize pool is funded by:
+- Platform fees from $TRUMPCHECK token transactions
+- Community contributions
+- Sponsor allocations
+
+<CardGroup cols={2}>
+  <Card title="Prize Currency" icon="dollar-sign">
+    All prizes are paid in **USDC** — the stablecoin pegged to the US dollar. No volatility risk.
+  </Card>
+  <Card title="Distribution" icon="scale-balanced">
+    The prize pool is split equally among all correct voters for each winning prediction.
+  </Card>
+</CardGroup>
+
+### Prize Calculation Example
+
+If today's prize pool is **$500 USDC** split across 5 predictions ($100 each), and 50 people correctly voted TACO on one prediction:
+
+```
+$100 ÷ 50 = $2.00 USDC per correct voter
+```
+
+The more unique your correct prediction (less people voted the same way), the larger your individual share.
+
+---
+
+## Verdict Rules
+
+Our verdict system uses multiple signals:
+
+| Signal | Weight |
+|--------|--------|
+| Official White House statements | High |
+| Reuters / AP news reports | High |
+| Congressional Record | Medium |
+| Social media (official accounts) | Medium |
+
+<Warning>
+  Verdicts are final. The 8 PM EST cron is automated and based on publicly available information at that time.
+</Warning>
+
+---
+
+## Fairness & Transparency
+
+- All votes are stored in our Supabase database with timestamps
+- Verdict criteria are set before predictions open
+- Smart contract payout logs are publicly visible on Solana explorer
+- No vote can be changed after submission

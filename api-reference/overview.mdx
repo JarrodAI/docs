@@ -1,0 +1,62 @@
+---
+title: "API Overview"
+description: "TrumpCheck.one REST API — access TACO scores, predictions, votes, and winners."
+---
+
+## Base URL
+
+All API endpoints are served from:
+
+```
+https://trumpcheck.one/api
+```
+
+---
+
+## Authentication
+
+The public API endpoints (score, questions, winners) require no authentication.
+
+Admin endpoints require the `CRON_SECRET` header — these are for internal use only and not documented here.
+
+---
+
+## Rate Limiting
+
+| Endpoint | Limit |
+|----------|-------|
+| `/api/score` | 60 req/min |
+| `/api/questions` | 60 req/min |
+| `/api/vote` | 5 req/min per IP |
+| `/api/winners` | 60 req/min |
+
+---
+
+## Response Format
+
+All responses return JSON. Successful responses include the requested data directly. Errors follow this format:
+
+```json
+{
+  "error": "Description of what went wrong"
+}
+```
+
+---
+
+## Endpoints
+
+<CardGroup cols={2}>
+  <Card title="GET /api/score" icon="chart-line" href="/api-reference/score">
+    Get the current T.A.C.O. Score and metadata
+  </Card>
+  <Card title="GET /api/questions" icon="list" href="/api-reference/questions">
+    Get today's prediction questions
+  </Card>
+  <Card title="POST /api/vote" icon="check" href="/api-reference/vote">
+    Submit a vote for a prediction
+  </Card>
+  <Card title="GET /api/winners" icon="trophy" href="/api-reference/winners">
+    Get yesterday's winning predictions and voters
+  </Card>
+</CardGroup>

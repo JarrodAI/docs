@@ -1,0 +1,56 @@
+---
+title: "GET /api/winners"
+description: "Get yesterday's winning predictions and prize pool results."
+---
+
+## Request
+
+```bash
+GET https://trumpcheck.one/api/winners
+```
+
+### Optional Query Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `date` | string | Date in `YYYY-MM-DD` format. Defaults to yesterday. |
+
+---
+
+## Response
+
+```json
+{
+  "date": "2026-03-03",
+  "questions": [
+    {
+      "id": "uuid",
+      "question": "Will Trump reverse the tariff threat?",
+      "verdict": "taco",
+      "taco_votes": 312,
+      "holds_votes": 89,
+      "winner_count": 312,
+      "prize_per_winner_usdc": 0.32
+    }
+  ],
+  "total_prize_pool_usdc": 500,
+  "total_winners": 1563
+}
+```
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `date` | string | Date of the verdicts |
+| `questions` | array | Array of question results |
+| `verdict` | string | `"taco"` or `"holds"` — the correct answer |
+| `winner_count` | number | Number of correct voters |
+| `prize_per_winner_usdc` | number | USDC per correct voter |
+| `total_prize_pool_usdc` | number | Total USDC in that day's pool |
+
+---
+
+## Example
+
+```bash
+curl "https://trumpcheck.one/api/winners?date=2026-03-03"
+```
